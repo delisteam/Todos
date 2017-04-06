@@ -13,16 +13,14 @@
       return id;
     }
     function getTime(){
-      var date=new Date();
       var date = new Date();
-      var year = date.getFullYear();
-      var month = date.getMonth()+1;
-      var day = date.getDate();
+
+ 
       var hour = date.getHours();
       var minute = date.getMinutes();
       var second = date.getSeconds();
       var str='';
-      return str='('+month+'月'+day+'日 '+hour+':'+minute+':'+second+')'
+      return str='('+hour+':'+minute+':'+second+')'
     }
     //检测是否带T
     function checkT(str1){
