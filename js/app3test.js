@@ -15,16 +15,16 @@
     $scope.text=''
     $scope.todos=[{
       id:Math.random(),
-      text:'上班',
+      text:'吃饭',
       completed:false,
     },{
       id:Math.random(),
-      text:'打卡',
+      text:'睡觉',
       completed:false,
     }, 
     {
       id:Math.random(),
-      text:'下班',
+      text:'打豆豆',
       completed:true,
     },]
        $scope.add = function() {
