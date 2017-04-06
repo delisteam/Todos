@@ -6,7 +6,7 @@
 		<title>殷晨东TodoMVC</title>
 		<link rel="stylesheet" href="angular/todomvc-app-css/index.css">
 		<!-- CSS overrides - remove if you don't need it -->
-		<link rel="stylesheet" href="css/app.css">
+
 	</head>
 	<body ng-controller="MainController">
 		<section class="todoapp">
@@ -26,8 +26,8 @@
 							<label ng-click='editing(todo.id)'>{{todo.text}}</label>
 							<button class="destroy" ng-click="remove(todo.id)"></button>
 						</div>
-						<form ng-submit='save()'>
-							<input class="edit" ng-model='todo.text' ng-blur='save()'>
+						<form ng-submit='save(todo.text)'>
+							<input class="edit" ng-model='todo.text' ng-blur='save(todo.text)'>
 						</form>
 					</li>
 				</ul>
@@ -53,11 +53,13 @@
 			</footer>
 		</section>
 		<footer class="info">
-			<p>单击编辑</p>
+			<p>单击可编辑已添加项</p>
+			<p>新项目末尾加/t添加时间</p>
 			<!-- Remove the below line ↓ -->
 			<!-- Change this out with your name and url ↓ -->
 			<p>制作者：<a href="#">殷晨东</a></p>
-			<p>技术支持<a href="http://todomvc.com">AngularJs</a></p>
+			<p>技术支持<a href="www.baidu.com">AngularJs</a></p>
+			<p>版本<a href="www.baidu.com">YcdTodos V1.4</a></p>
 		</footer>
 		<!-- Scripts here. Don't remove ↓ -->
 		<script src="angular/angular/angular.js"></script>
