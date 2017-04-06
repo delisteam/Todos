@@ -2,8 +2,11 @@ html,
 body {
 	margin: 0;
 	padding: 0;
+	  -webkit-tap-highlight-color: transparent;
 }
+*{
 
+}
 button {
 	margin: 0;
 	padding: 0;
@@ -209,7 +212,6 @@ label[for='toggle-all'] {
 }
 
 .todo-list li .destroy {
-	display: none;
 	position: absolute;
 	top: 0;
 	right: 10px;

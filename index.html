@@ -23,7 +23,7 @@
 					<li ng-repeat='todo in todos | filter:selector' ng-class='{completed:todo.completed,editing:todo.id===bianji}'>
 						<div class="view">
 							<input class="toggle" type="checkbox" ng-model='todo.completed'>
-							<label ng-dblclick='editing(todo.id)'>{{todo.text}}</label>
+							<label ng-click='editing(todo.id)'>{{todo.text}}</label>
 							<button class="destroy" ng-click="remove(todo.id)"></button>
 						</div>
 						<form ng-submit='save()'>
@@ -53,7 +53,7 @@
 			</footer>
 		</section>
 		<footer class="info">
-			<p>双击去编辑</p>
+			<p>单击去编辑</p>
 			<!-- Remove the below line ↓ -->
 			<p>Template by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
 			<!-- Change this out with your name and url ↓ -->
