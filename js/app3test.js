@@ -1,7 +1,7 @@
 (function(angular){
     'use strict';
   var MyApp=angular.module('MyTodoMvc',[])
-  MyApp.controller('MainController', ['$scope','$location', function($scope,$location){
+  MyApp.controller('MainController', ['$scope','$location','$http','$interval', function($scope,$location,$http,$interval){
     function getId(){
       var id=Math.random();
       for(var i=0;i<$scope.todos.length;i++){
@@ -127,6 +127,10 @@
          $scope.bianji=-1;
        }
     }
+     $scope.theTime=new Date().toLocaleTimeString();
+    $interval(function(){
+      $scope.theTime=new Date().toLocaleTimeString();
+    },1000);
     $scope.selector={};
     $scope.$location=$location;
     $scope.$watch('$location.path()',function(now,old){
@@ -141,6 +145,20 @@
     		$scope.selector={};
     		break;
     	}
+    });
+     $scope.weather='';
+    $scope.Centigrade='';
+    $scope.nightweather='';
+    $scope.nightCentigrade='';
+    $http({
+      method:'jsonp',
+      url:'http://cdn.weather.hao.360.cn/api_weather_info.php?app=hao360&_jsonp=JSON_CALLBACK&code=101210101'
+    }).success(function(data){
+      $scope.weather=data.weather[0].info.day[1];
+      $scope.Centigrade=data.weather[0].info.day[2]
+      $scope.nightweather=data.weather[0].info.night[1];
+      $scope.nightCentigrade=data.weather[0].info.night[2];
+      
     })
   }])
 })(angular)

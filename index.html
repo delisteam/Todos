@@ -8,8 +8,9 @@
 		<!-- CSS overrides - remove if you don't need it -->
 
 	</head>
-	<body ng-controller="MainController">
-		<section class="todoapp">
+	<body ng-controller="MainController" ng-mouseover="hover=true" ng-mouseleave="hover=false">
+		<section class="todoapp"  class='position:relative'>
+		<div class='todosTime' ng-if='hover'>{{theTime}}</div>
 			<header class="header">
 				<h1 id='teshu'>任务清单</h1>
 				<form ng-submit="add()">
@@ -54,12 +55,13 @@
 		</section>
 		<footer class="info">
 			<p>单击可编辑已添加项</p>
-			<p>新项目末尾加/t添加时间</p>
+			<p>末尾加/t添加时间</p>
 			<!-- Remove the below line ↓ -->
 			<!-- Change this out with your name and url ↓ -->
 			<p>制作者：<a href="#">殷晨东</a></p>
-			<p>技术支持<a href="www.baidu.com">AngularJs</a></p>
-			<p>版本<a href="www.baidu.com">YcdTodos V1.4</a></p>
+			<p>杭州天气情况:<span>白天：{{weather}} <span>温度:</span><span>{{Centigrade}}°</span></span></span></p>
+			<p>夜晚:{{nightweather}}  <span>温度:</span><span>{{nightCentigrade}}°     <span>版本<a href="#">V2.1(死都不修改版)</a></span>
+		</p>	
 		</footer>
 		<!-- Scripts here. Don't remove ↓ -->
 		<script src="angular/angular/angular.js"></script>
