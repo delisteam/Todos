@@ -52,22 +52,9 @@
        $scope.add = function() {
         if (!$scope.text) {
         return;
-      }else if($scope.text=='吃屎'){
-        alert('吃屎有益身心健康');
-         $scope.todos.push({
-        id: getId(),
-        text: '吃屎',
-        completed: false,
-      })
       }
-       else if($scope.text=='殷晨东'){
-        alert('你肯定暗恋我');
-         $scope.todos.push({
-        id: getId(),
-        text: $scope.text,
-        completed: false,
-      });
-      }
+
+
       else if(checkT($scope.text)){
 
         $scope.todos.push({
